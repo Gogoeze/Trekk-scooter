@@ -1,0 +1,498 @@
+<html>
+
+<head>
+  <title>Trekk Scooter Dashboard</title>
+
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style> 
+ :root{
+	--main-color: #348f6c;
+	--second-color: #e2c992;
+	--black: #000;
+	--white: #fff;
+}
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+	background: var(--main-color);
+	height: 100vh;
+}
+.clearfix{
+	clear: both;
+}
+
+
+.left-div {
+  width: 100%; /* Full width on smaller screens */
+  float: none; /* Clear the float */
+  height: auto; /* Adjust the height */
+  padding: 25px 10px 0px 35px;
+}
+
+.right-div {
+  width: 100%; /* Full width on smaller screens */
+  float: none; /* Clear the float */
+  height: auto; /* Adjust the height */
+  background: var(--white);
+  margin: 25px 0; /* Adjust the margin */
+  border-radius: 25px;
+  padding: 30px;
+}
+
+@media (min-width: 1220px) {
+  /* Apply styles for screens 768px and above */
+  .left-div {
+    width: 12%;
+    float: left;
+    height: 90vh;
+  }
+
+  .right-div {
+    width: 76%;
+    float: left;
+    height: 85vh;
+    margin: 25px;
+  }
+
+ } 
+
+.logo{
+	text-align: center;
+	color: white;
+	font-weight: bold;
+}
+
+.nav li{
+	list-style: none;
+	padding: 13px 10px;
+}
+.nav li a{
+	text-decoration: none;
+	color: white;
+}
+.nav li a i{
+	padding-right: 5px;
+    color: var(--second-color);
+    font-size: 23px;
+    padding-right: 10px;
+    vertical-align: bottom;
+    width: 23px;
+    height: 23px;
+}
+.active{
+	background:var(--white);
+	border-radius: 27px;
+	position: relative;
+}
+
+.nav > .active::before, .nav > .active::after {
+     content: "";
+     position: absolute;
+}
+
+.active a{
+	color: var(--black)!important;
+}
+
+.head{
+padding: 0px 6px;
+    border-bottom: 1px solid #348f6c;
+    padding-bottom: 10px;
+}
+.col-div-6{
+	width: 50%;
+	float: left;
+}
+
+.col-div-4-1{
+  width: 33.3%;
+/*   height:80%; */
+  float: left;
+}
+.box{
+	width: 88%;
+    height: 130px;
+    background-color: #e3e3e3;
+    margin-left: 10px;
+    padding: 10px;
+    box-shadow: 2px 5px 10px #ddd;
+    position: relative;
+    border-radius: 15px;
+}
+  
+
+.number{
+  font-size: 35px;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+.percent{
+  margin: 0px;
+  font-size: 14px;
+  color: #348f6c!important;
+}
+.percent span{
+  font-size: 12px;
+  color: #348f6c;
+  padding-left: 3px;
+}
+
+.head-1 span{
+    float: right;
+    background-color: #348f6c;
+    color: white;
+    padding: 3px 10px;
+    font-size: 15px;
+    line-height: 14px;
+    vertical-align: baseline;
+    padding-top: 8px;
+}
+.box-icon{
+	    font-size: 20px!important;
+    margin-top: 35px!important;
+    color: #348f6c;
+    padding-right: 10px;
+    background-color: #efeff5;
+    padding: 15px;
+    border-radius: 25px;
+    position: absolute;
+    right: 16px;
+    top: -18px;
+}
+.box-1{
+  width:290%;
+  height: 410px;
+  background-color:#e3e3e3;
+  margin-left: 10px;
+  padding:10px;
+  box-shadow: 2px 5px 10px #ddd;
+  position: relative;
+}
+
+
+
+
+.content-box-1{
+  padding: 0px 10px;
+}
+.col-div-12{
+	width: 100%;
+}
+
+.col-div-4{
+	width: 30%;
+	float: left;
+}
+
+.content-box p{
+	margin: 0px;
+    font-size: 20px;
+    color:#6c7293;
+}
+.content-box p span{
+	float: right;
+    background-color: #5643ff;
+    color: white;
+    padding: 3px 10px;
+    font-size: 15px;
+}
+.box-8{
+	width: 97.8%;
+	background-color: #fff;
+	height: 330px;
+	
+}
+.active1{
+	    background: #348f6c;
+    color: white;
+    border-radius: 0;
+}
+.active1 p .no-1{
+	color: white;
+}
+
+#map_markers_div {
+ 
+  border: 1px solid black;
+  border-radius: 20px;
+}
+#map_markers_div:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+#gateway-battery{
+  font-size:30px;
+  
+}
+
+
+
+
+.battery-container {
+      position: relative;
+      width: 100px;
+      height: 50px;
+      background-color: #fff;
+      border: 2px solid #333;
+      border-radius: 5px;
+    }
+
+    .battery-level {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+      width: calc(100% - 4px);
+      background-color: #4CAF50; /* Green color for battery level */
+      border-radius: 3px;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .battery-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: #348f6c;
+}
+
+h4{
+  font-size: 20px;
+  color:white;
+}
+
+  </style>
+  
+</head>
+
+<body>
+<!--  gateway battery and count in the left div  -->
+
+<section>
+  <div class="left-div">
+    <br>
+    <h2 class="logo">Trekk-Scooter</h2>
+    <br><br>
+    <hr class="hr" />
+    <ul class="nav">
+      <br><br>
+      <div class="battery-container">
+        <div class="battery-level" style="width: 00%;"></div>
+        <div class="battery-text" id="gateway-battery"></div>
+      </div>
+      <br>
+      <h4><b>Gateway battery</h4>
+      <br><br><br>
+      <div class="battery-container">
+        <div class="battery-level" style="width: 00%;"></div>
+        <div class="battery-text" id="count"></div>
+      </div>
+      <br>
+      <h4><b>Count</h4>
+  </div>
+  </li>
+
+  </ul>
+  </div>
+  <!--  end of left div  -->
+
+  <!--  right div the dashboard  -->
+
+  <div class="right-div">
+
+    <div id="main">
+      <br>
+      <div class="head">
+        <div class="col-div-6">
+          <p class="nav"> Dashboard</p>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+
+      <br /><br /><br />
+
+      <div class="col-div-4-1">
+        <div class="box">
+
+<!--      Node 1        -->
+          
+          <p class="head-1">Node 1</p>
+          <div class="nodeLogo">
+            <i class="uil uil-map-marker box-icon"></i>
+          </div>
+          <p class="number" id="node-battery1"></p>
+          <p class="percent" id="longitude1"></p>
+          <p class="percent" id="latitude1"><span></p>
+        </div>
+      </div>
+
+      <!--     End of Node 1        -->
+      
+      
+        <!--     Node 2        -->
+      
+      <div class="col-div-4-1">
+        <div class="box">
+          <p class="head-1">Node 2</p>
+          <div class="nodeLogo">
+            <i class="uil uil-map-marker box-icon"></i>
+          </div>
+          <p class="number" id="node-battery2"></p>
+          <p class="percent" id="longitude2" style="color:red!important"></p>
+          <p class="percent" id="latitude2" style="color:red!important"></p>
+        </div>
+      </div>
+
+        <!--     End of Node 2        -->
+      
+      
+        <!--     Node 3        -->
+      
+      <div class="col-div-4-1">
+        <div class="box">
+          <p class="head-1 node-battery3">Node 3</p>
+          <div class="nodeLogo">
+            <i class="uil uil-map-marker box-icon"></i>
+          </div>
+          <p class="number" id="node-battery3"></p>
+          <p class="percent" id="longitude3"></p>
+          <p class="percent" id="latitude3"><i class="fa fa-long-arrow-down" aria-hidden="true"></i></p>
+        </div>
+      </div>
+
+        <!--     End of Node 3        -->
+      
+      <div class="clearfix"></div>
+      <br /><br />
+
+      <div class="col-div-4-1">
+        <div class="box-1">
+          <div id="map_markers_div" style="width: 100%; margin:auto; height:100%"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+  
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    const endpoint = 'https://api.thingspeak.com/channels/2331405/feeds.json?api_key=4107UDD5DG3998RA&';
+    const mockEndpoint = 'https://my-json-server.typicode.com/Gogoeze/demo/db';
+    fetch(mockEndpoint)
+      .then(response => {
+        return response.json();
+      })
+      .then(jsonData => {
+        // FUNCTION TO GET LAST FEED OF SPECIFIC IDS VARIABLES
+        function getLastFeed(entry_id) {
+          const matchingObjects = jsonData.feeds.filter(item => item.field1 === entry_id);
+          if (matchingObjects.length > 0) {
+            let actualMatchingObject = matchingObjects[matchingObjects.length - 1];
+            for (var gogo = matchingObjects.length - 1; gogo >= 0; gogo--) {
+              if (Number(matchingObjects[gogo].field3) !== 0 && Number(matchingObjects[gogo].field2) !== 0) {
+                actualMatchingObject = matchingObjects[gogo];
+                break;
+              }
+            }
+            return actualMatchingObject;
+          }
+          return null;
+        }
+        const lastFeed1 = getLastFeed("1");
+        const lastFeed2 = getLastFeed("2");
+        const lastFeed3 = getLastFeed("3");
+        // ARRAY OF LAST FEEDS
+        // const lastFeedArray = [lastFeed1, lastFeed2, lastFeed3];
+        // console.log(lastFeedArray);
+        //ID1,2,3.
+        // let ID1 = Number(lastFeed1.field1);
+        // let ID2 = Number(lastFeed2.field1);
+        // let ID3 = Number(lastFeed3.field1);
+        //node batterry1,2,3.
+        // let nodeBattery1 = Number(lastFeed1.field4);
+        let nodeBattery1 = lastFeed1 !== null ? Number(lastFeed1.field4) : "N/A";
+        let nodeBattery2 = lastFeed2 !== null ? Number(lastFeed2.field4) : "N/A";
+        let nodeBattery3 = lastFeed3 !== null ? Number(lastFeed3.field4) : "N/A";
+        // gateway-battery
+        let gatewayBattery = lastFeed3 !== null ? Number(lastFeed3.field5) : "N/A";
+        let count = lastFeed3 !== null ? Number(lastFeed3.field6) : "N/A";;
+        //long&lat node1
+        // let long1 = Number(lastFeed1.field2);
+        // let lat1 = Number(lastFeed1.field3);
+        var entryList = [];
+        if (lastFeed1 !== null && Number(lastFeed1.field3) !== 0 && Number(lastFeed1.field2) !== 0) {
+          entryList.push([Number(lastFeed1.field3), Number(lastFeed1.field2), 'Node 1']);
+        }
+        console.log(JSON.stringify(lastFeed1));
+        if (lastFeed2 !== null && Number(lastFeed2.field3) !== 0 && Number(lastFeed2.field2) !== 0) {
+          entryList.push([Number(lastFeed2.field3), Number(lastFeed2.field2), 'Node 2']);
+        }
+        console.log(JSON.stringify(lastFeed2));
+        if (lastFeed3 !== null && Number(lastFeed3.field3) !== 0 && Number(lastFeed3.field2) !== 0) {
+          entryList.push([Number(lastFeed3.field3), Number(lastFeed3.field2), 'Node 3']);
+        }
+        console.log(JSON.stringify(lastFeed3));
+        if (entryList.length === 0) {
+          entryList.push([8.9302894, 7.3192647, 'Node 1']);
+        }
+        console.log(JSON.stringify(entryList));
+        //  document.getElementById("id1").innerHTML = ID1;
+        //   document.getElementById("id2").innerHTML = ID2;
+        //   document.getElementById("id3").innerHTML = ID3;
+        document.getElementById("node-battery1").innerHTML = `${nodeBattery1}%`;
+        document.getElementById("node-battery2").innerHTML = `${nodeBattery2}%`;
+        document.getElementById("node-battery3").innerHTML = `${nodeBattery3}%`;
+        document.getElementById("gateway-battery").innerHTML = `${gatewayBattery}%`;
+        document.getElementById("longitude1").innerHTML = lastFeed1 !== null ? Number(lastFeed1.field2) : "N/A";
+        document.getElementById("latitude1").innerHTML = lastFeed1 !== null ? Number(lastFeed1.field3) : "N/A";
+        document.getElementById("longitude2").innerHTML = lastFeed2 !== null ? Number(lastFeed2.field2) : "N/A";;
+        document.getElementById("latitude2").innerHTML = lastFeed2 !== null ? Number(lastFeed2.field3) : "N/A";;
+        document.getElementById("longitude3").innerHTML = lastFeed3 !== null ? Number(lastFeed3.field2) : "N/A";
+        document.getElementById("latitude3").innerHTML = lastFeed3 !== null ? Number(lastFeed3.field3) : "N/A";
+        document.getElementById("count").innerHTML = count;
+        // THE MAP
+        google.charts.load("current", {
+          "packages": ["map"],
+          "mapsApiKey": "AIzaSyCjYhtM2Uchr6m8BuU5hBFlTteFeZrHUWA"
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+          console.log(JSON.stringify(entryList[0]));
+          var data = google.visualization.arrayToDataTable([
+            ['Lat', 'Long', 'Name'],
+            ...entryList
+          ]);
+          var options = {
+            icons: {
+              default: {
+                normal: 'https://trek-scooter-bucket.s3.eu-north-1.amazonaws.com/Group+41.png',
+                selected: 'https://trek-scooter-bucket.s3.eu-north-1.amazonaws.com/Group+41.png'
+              }
+            }
+          };
+          var map = new google.visualization.Map(document.getElementById('map_markers_div'));
+          map.draw(data, options);
+        }
+      })
+  </script>
+</body>
+
+</html>

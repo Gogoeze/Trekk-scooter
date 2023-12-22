@@ -1,0 +1,166 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="trekk-dash.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="trekk-dash.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".profile p").click(function () {
+        $(".profile-div").toggle();
+
+      });
+      $(".noti-icon").click(function () {
+        $(".notification-div").toggle();
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
+    $('li').click(function () {
+      $('li').removeClass("active");
+      $(this).addClass("active");
+    });
+  </script>
+</head>
+
+  <body>
+    <section>
+      <div class="left-div">
+        <br>
+        <h2 class="logo">Trekk-Scooter</h2>
+        <br><br>
+        <hr class="hr" />
+        <ul class="nav">
+          <li><a href=""><i class="fa fa-desktop"></i> Admin</a></li>
+
+          <div class="circle-wrap">
+            <div class="circle">
+              <div class="mask full">
+                <div class="fill"></div>
+              </div>
+              <div class="mask half">
+                <div class="fill"></div>
+              </div>
+              <div class="inside-circle" id="gateway-battery"> % </div>
+              <br><br><br><br><br><br><br><br><br><br>
+              <p><b>Gateway-Battery</p>
+            </div>
+            </li>
+
+
+            <div class="circle-wrap">
+              <div class="circle">
+                <div class="mask full">
+                  <div class="fill"></div>
+                </div>
+                <div class="mask half">
+                  <div class="fill"></div>
+                </div>
+                <div class="inside-circle" id="count"> </div>
+                <br><br><br><br><br><br><br><br><br><br>
+                <p><b>Count</p>
+              </div>
+              </li>
+
+        </ul>
+      </div>
+
+      <div class="right-div">
+
+
+
+        <div id="main">
+          <br>
+          <div class="head">
+            <div class="col-div-6">
+              <p class="nav"> Dashboard</p>
+            </div>
+
+            <div class="clearfix"></div>
+          </div>
+
+          <br /><br /><br />
+
+          <div class="col-div-4-1">
+            <div class="box">
+              <p class="head-1">Node 1</p>
+              <p class="number" id="node-battery1"></p>
+
+              <p class="percent" id="longitude1">
+                <i class="fa fa-long-arrow-up"></i>
+              </p>
+
+              <p class="percent" id="latitude1">
+                <i class="fa fa-long-arrow-down"></i><span>
+              </p>
+
+              <i class="fa fa-location-pin box-icon"></i>
+            </div>
+          </div>
+
+          <div class="col-div-4-1">
+            <div class="box">
+              <p class="head-1">Node 2</p>
+              <p class="number" id="node-battery2"></p>
+
+              <p class="percent" id="longitude2" style="color:red!important">
+                <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+              </p>
+
+              <p class="percent" id="latitude2" style="color:red!important"><i class="fa fa-long-arrow-down"
+                  aria-hidden="true"></i></p>
+
+              <i class="fa fa-circle-o-notch box-icon"></i>
+            </div>
+          </div>
+
+          <div class="col-div-4-1">
+            <div class="box">
+              <p class="head-1 node-battery3">Node 3</p>
+              <p class="number" id="node-battery3">%</p>
+
+              <p class="percent" id="longitude3"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></p>
+
+              <p class="percent" id="latitude3"><i class="fa fa-long-arrow-down" aria-hidden="true"></i></p>
+
+              <i class="fa fa-shopping-bag box-icon"></i>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+          <br /><br />
+
+          <!-- 	 -->
+          <!-- <p id="id1"></p>
+          <p id="id2"></p>
+          <p id="id3"></p> -->
+          <p id="count"></p>
+
+          <!--        -->
+
+          <div class="col-div-4-1">
+            <div class="box-1">
+              <div id="map_markers_div" style="width: 100%; margin:auto; height:100%"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
+  </body>
+
+</html>
